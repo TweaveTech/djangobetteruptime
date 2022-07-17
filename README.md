@@ -1,29 +1,20 @@
-# README #
+=====
+Django Better Uptime
+=====
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Polls is a Django app which gives you access to a decorator. 
+Upon succesful completion of your function, the decorator will inform your betteruptime heartbeat.
 
-### What is this repository for? ###
+Quick start
+-----------
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+1. Add "polls" to your INSTALLED_APPS setting like this::
 
-### How do I get set up? ###
+    INSTALLED_APPS = [
+        ...
+        'betteruptime',
+    ]
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+2. Include the polls URLconf in your project urls.py like this::
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+    @send_heartbeat('someheartbeatid')
