@@ -14,7 +14,9 @@ def send_heartbeat(heartbeat_id=None, run_in_debug=False):
         def wrap_f(self, *args, **kwargs):
             f_res = f(self, *args, **kwargs)
 
-            heartbeat_id = heartbeat_id or self.heartbeat_id
+            if not heartbeat_id:
+                heartbeat_id = self.heartbeat_id
+                
             sound_alive(heartbeat_id)
 
             return f_res
