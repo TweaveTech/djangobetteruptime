@@ -1,0 +1,2 @@
+class NoHeartBeatIdError(Exception):
+    pass
