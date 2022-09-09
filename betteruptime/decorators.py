@@ -18,7 +18,8 @@ def send_heartbeat(heartbeat_id=None, run_in_debug=False):
                 sound_alive(heartbeat_id)
             else:
                 try:
-                    sound_alive(self.heartbeat_id)
+                    print(args[0])
+                    #sound_alive(self.heartbeat_id)
                 except AttributeError:
                     raise NoHeartBeatIdError()
             return f_res
