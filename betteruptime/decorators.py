@@ -4,7 +4,7 @@ from .exceptions import NoHeartBeatIdError
 import requests
 
 
-def send_heartbeat(heartbeat_id=None, run_in_debug=False):
+def send_heartbeat(heartbeat_id=None, pass_if_none=True, run_in_debug=False):
     '''
     Send a heartbeat to the given better-uptime url if the function ran successfully.
     If however the function failed, it should send a heartbeat at all.
@@ -18,9 +18,14 @@ def send_heartbeat(heartbeat_id=None, run_in_debug=False):
                 sound_alive(heartbeat_id)
             else:
                 try:
-                    sound_alive(args[0].heartbeat_id)
+                    if args[0].heartbeat_id:
+                        sound_alive(args[0].heartbeat_id)
+                    else:
+                        if not pass_if_none:
+                            raise NoHeartBeatIdError()
                 except AttributeError:
-                    raise NoHeartBeatIdError()
+                    if not pass_if_none:
+                        raise NoHeartBeatIdError()
             return f_res
         return wrap_f
     return dec_f
