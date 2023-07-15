@@ -10,4 +10,4 @@ def create_heartbeat_url(heartbeat_id):
 
 def sound_alive(heartbeat_id):
 	url = create_heartbeat_url(heartbeat_id)
-	requests.get(url)
+	return requests.get(url)
