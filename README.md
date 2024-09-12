@@ -1,3 +1,5 @@
+*Moved to Github*
+
 # Django Better Uptime
 
 Polls is a Django app which gives you access to a decorator. 
