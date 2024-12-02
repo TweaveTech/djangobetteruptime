@@ -8,7 +8,7 @@ Upon succesful completion of your function, the decorator will inform your bette
 1. Add the app to your requirements.txt or install via pip:
 
     ```
-    git+ssh://git@bitbucket.org/slaapadviesbvba/djangobetteruptime.git
+    git+https://git@github.com/TweaveTech/djangobetteruptime.git@master    
     ```
 
 2. Add "betteruptime" to your INSTALLED_APPS setting like this::
